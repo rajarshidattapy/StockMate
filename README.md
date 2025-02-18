@@ -1,7 +1,5 @@
 # StockMate: Portfolio Risk Analyzer
-
-### Project Idea: Portfolio Risk Analyzer
-
+-------------
 Description:
 A web-based application that allows users to manage and analyze their investment portfolios. Users can add various assets, view portfolio risk metrics, and receive AI-based recommendations to optimize their investments.
 
