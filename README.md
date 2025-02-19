@@ -1,61 +1,75 @@
-# StockMate: Portfolio Risk Analyzer
--------------
-Description:
-A web-based application that allows users to manage and analyze their investment portfolios. Users can add various assets, view portfolio risk metrics, and receive AI-based recommendations to optimize their investments.
+# Portfolio Risk Analyzer
 
----
+A comprehensive application for analyzing investment portfolio risk and performance metrics.
 
-### Core Features
-1. *Portfolio Management*: 
-   - Add, update, delete, and list financial assets in a portfolio (CRUD operations with Oracle DB).
-   
-2. *Risk Analysis*:
-   - Use Gemini/Mistral APIs to fetch financial market data and run AI-based analysis on potential risks.
-   
-3. **AI-Based Recommendations**:  
-   - Display investment recommendations based on market trends and asset risk profiles.
-   
-4. **Interactive Dashboard**:  
-   - Use JavaScript to create charts and graphs to visualize portfolio performance and risk.
+## Project Structure
 
----
+```
+PortfolioRiskAnalyzer/
+├── backend/                 # Java-based backend
+│   ├── src/                # Java source code
+│   │   └── main/java/com/portfolio/
+│   │       ├── controller/ # API endpoints
+│   │       ├── service/    # Business logic
+│   │       └── model/      # Data models
+│   └── pom.xml             # Maven dependencies
+├── frontend/               # React frontend
+│   ├── src/
+│   │   ├── components/    # React components
+│   │   └── App.tsx       # Main application
+│   └── package.json
+└── database/              # Oracle database scripts
+    ├── schema.sql        # DB schema definition
+    └── seed.sql          # Sample data
+```
 
-### *Technical Stack Breakdown*
-1. **Java (Backend)**:
-   - Handle business logic, API integration, and CRUD operations with Oracle DB.
-   - Use RESTful endpoints to expose data to the front end.
+## Features
 
-2. **Oracle DB**:
-   - Store user portfolio data and transaction history.
-   - Perform CRUD operations for managing assets.
+- Portfolio performance tracking
+- Risk metrics calculation
+- Interactive charts and visualizations
+- Real-time market data integration
+- Risk score analysis
 
-3. **Gemini/Mistral API Integration**:
-   - Fetch financial market data for AI analysis (e.g., stock price changes, volatility, etc.).
+## Technology Stack
 
-4. **HTML/CSS/JavaScript**:
-   - Design a modern, responsive interface to display user portfolios and risk metrics.
-   - Use libraries like Chart.js or D3.js for data visualization.
+- Frontend: React, TypeScript, Chart.js
+- Backend: Java Spring Boot
+- Database: Oracle
+- UI Components: Tailwind CSS
+- Charts: react-chartjs-2
 
----
+## Getting Started
 
-### *Project Architecture*
-1. **Frontend**:  
-   - HTML/CSS for layout and styling.
-   - JavaScript for fetching data and rendering dynamic content.
-  
-2. **Backend**:  
-   - Java servlet or Spring Boot (optional) to expose RESTful APIs.
-   - Java integration with Gemini/Mistral APIs for AI-based analysis.
+1. Set up the database:
+   ```sql
+   -- Run the schema and seed scripts
+   @database/schema.sql
+   @database/seed.sql
+   ```
 
-3. **Database**:  
-   - Oracle DB for storing asset and transaction data.
+2. Start the backend:
+   ```bash
+   cd backend
+   mvn spring-boot:run
+   ```
 
----
+3. Start the frontend:
+   ```bash
+   npm install
+   npm run dev
+   ```
 
+## Development
 
+- Frontend development server runs on `http://localhost:5173`
+- Backend API server runs on `http://localhost:8080`
+- Database runs on configured Oracle instance
 
-### **Bonus Features (Optional Enhancements)**
-- **User Authentication**: Add login/logout functionality using Java and Oracle DB for storing user credentials.
-- **Predictive Analysis**: Use simple machine learning algorithms for predicting portfolio performance based on past trends.
-- **Responsive Design**: Ensure the UI is mobile-friendly.
+## Contributing
 
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
